@@ -1,9 +1,10 @@
 .wrapper {
     font-size: 1.6rem;
     font-weight: 700;
-    min-width: 100px;
+    min-width: 110px;
     width: auto;
-    padding: 9px 16px;
+    height: 36px;
+    padding: 0px 16px;
     border-radius: 4px;
     cursor: pointer;
     background-color: var(--white);
@@ -67,8 +68,12 @@
 }
 
 .text {
+    border: 1px solid rgba(22, 24, 35, 0.12);
+    border-radius: 2px;
+    background: rgb(255, 255, 255);
+
     &:hover {
-        text-decoration: underline;
+        background-color: rgba(22, 24, 35, 0.03);
     }
 
 }
