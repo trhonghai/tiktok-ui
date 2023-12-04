@@ -11,8 +11,6 @@ import {
     faGear,
     faKeyboard,
     faMagnifyingGlass,
-    faMessage,
-    faPaperPlane,
     faPlus,
     faSignOut,
     faUser,
@@ -27,6 +25,8 @@ import styles from './Header.module.scss';
 import { wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import Menu from '~/components/Popper/Menu';
+import { InboxIcon, MessageIcon } from '~/components/Icons';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
@@ -52,12 +52,12 @@ const MENU_ITEMS = [
     },
     {
         icon: <FontAwesomeIcon icon={faCircleQuestion} />,
-        title: 'Feedback and help',
+        title: 'Phản hồi và trợ giúp',
         to: '/feedback',
     },
     {
         icon: <FontAwesomeIcon icon={faKeyboard} />,
-        title: 'Keyboard shortcuts',
+        title: 'Phím tắt trên bàn phím',
     },
 ];
 
@@ -159,7 +159,7 @@ function Header() {
                                 placement="bottom"
                             >
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faPaperPlane} />
+                                    <MessageIcon />
                                 </button>
                             </Tippy>
                             <Tippy
@@ -168,7 +168,8 @@ function Header() {
                                 placement="bottom"
                             >
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faMessage} />
+                                    {/* <FontAwesomeIcon icon={faMessage} /> */}
+                                    <InboxIcon />
                                 </button>
                             </Tippy>
                         </>
@@ -190,10 +191,11 @@ function Header() {
                         onchange={handleMenuChange}
                     >
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('user-avatar')}
                                 alt="Truong Hong H"
-                                src="https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-giso/aafac68c65b5eec6d06c31d05e27a48f~c5_720x720.jpeg?x-expires=1701435600&x-signature=EAqAf1bzJNKC2XuChz0pYBZ6mw4%3D"
+                                src="https://p15-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-giso/aafac68c65b5eec6d06c31d05e27a48f~c5_720x720.jpeg?x-expires=1701435600&x-signature=EAqAf1bzJNKC2XuChz0pYBZ6mw4%3D"
+                                fallback="https://files.fullstack.edu.vn/f8-prod/user_photos/369575/65409bb2ed530.jpg"
                             />
                         ) : (
                             <>
